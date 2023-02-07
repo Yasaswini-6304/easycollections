@@ -1,0 +1,40 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+import java.util.Scanner;
+
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        Scanner scan = new Scanner(System.in);
+        int s;
+        int cntmax=0;
+        int cntmin=0;
+        int n= scan.nextInt();
+        List <Integer> x=new ArrayList<>(); 
+        for (int i=0;i<n;i++){
+            s=scan.nextInt();
+            x.add(s);
+        }
+        int min=x.get(0);
+        int max=x.get(0);
+        for (int i=0;i<n;i++){
+            if (x.get(i)>max){
+                max=x.get(i);
+                cntmax=cntmax+1;
+            }
+            if (x.get(i)<min){
+                min = x.get(i);
+                cntmin=cntmin+1;
+                
+            }
+        }
+        System.out.print(cntmax+" ");
+        System.out.print(cntmin);
+        
+    }
+}
